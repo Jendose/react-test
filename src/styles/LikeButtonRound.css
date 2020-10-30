@@ -1,20 +1,16 @@
 .button__text {
-    /*font-family: Calibri;*/
-    /*font-size: xx-large;*/
     font-weight: bold;
 }
 
 .button--like {
-    height: 60px;
+    height: 100%;
     width: 60px;
-    border-radius: 30px;
-    margin-right: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: large;
-    transition: 300ms;
-    background-color: rgba(122, 116, 170, 0.25);
+    transition: 500ms;
+    background-color: #b4c3d0;
 
 }
 
@@ -31,13 +27,11 @@
     height: 100%;
     width: 60px;
     display: flex;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
     align-items: center;
     justify-content: center;
     font-size: large;
-    transition: 300ms;
-    background-color: #c45269;
+    transition: 500ms;
+    background-color: #c71166;
 }
 
 .button--liked > * {
@@ -45,15 +39,7 @@
 }
 
 .button--liked:hover {
-    background-color: #c45269;
+    background-color: #c71166;
     color: aliceblue;
     cursor: pointer;
-}
-
-.button-wrapper{
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    width: 75px;
-    height: 100%;
 }

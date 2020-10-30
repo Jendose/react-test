@@ -13,7 +13,7 @@ class Header extends React.Component {
                             <div className="menu__icon icon-menu">
                                 <span></span>
                             </div>
-                            <div className="menu__list">
+                            <div className="menu__body">
                                 <div className="menu__element">Tracks Database</div>
                                 <div className="menu__element">Liked Tracks</div>
                             </div>

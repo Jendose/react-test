@@ -75,6 +75,8 @@
     border: 3px solid transparent;
     border-bottom: 3px solid #b4c3d0;
     border-radius: 5px;
+    color: black;
+    text-decoration: none;
 }
 
 .title-element:hover, .title-element--small:hover{
@@ -175,7 +177,7 @@
 
 .properties-element{
     display: flex;
-    align-self: center;
+    justify-content: center;
     font-size: large;
     font-weight: bold;
     background-color: rgba(180, 195, 208, 0.3);

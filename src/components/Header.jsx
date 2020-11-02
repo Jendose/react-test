@@ -1,6 +1,7 @@
 import React from 'react';
 import '../styles/Header.css';
 import logo from '../images/logo.png';
+import {NavLink} from "react-router-dom";
 
 class Header extends React.Component {
     render() {
@@ -8,14 +9,14 @@ class Header extends React.Component {
             <header className="header">
                 <div className="container">
                     <div className="header__row">
-                        <div className="header__logo"><a href='/'><img src={logo}/></a></div>
+                        <div className="header__logo"><NavLink to='/'><img src={logo}/></NavLink></div>
                         <div className="header__menu menu">
                             <div className="menu__icon icon-menu">
                                 <span></span>
                             </div>
                             <div className="menu__body">
-                                <div className="menu__element">Tracks Database</div>
-                                <div className="menu__element">Liked Tracks</div>
+                                <NavLink to='/tracks' className="menu__element">Tracks Database</NavLink>
+                                <NavLink to='/favorites' className="menu__element">Liked Tracks</NavLink>
                             </div>
                         </div>
                     </div>

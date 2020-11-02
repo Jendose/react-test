@@ -27,7 +27,7 @@ class LikeButton extends React.Component {
                 <div className="button-wrapper">
                     <div className={this.state.className} onClick={
                         () => {
-                            this.props.updateData(!this.state.isLiked);
+                            this.props.updateLike(!this.state.isLiked);
                             this.changeState();
                         }
                     }>

@@ -7,14 +7,14 @@
 .button--like {
     height: 60px;
     width: 60px;
-    border-radius: 30px;
+    border-radius: 15px;
     margin-right: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: large;
     transition: 300ms;
-    background-color: rgba(122, 116, 170, 0.25);
+    background-color: rgba(56, 78, 120, 0.2);
 
 }
 
@@ -23,7 +23,7 @@
 }
 
 .button--like:hover {
-    background-color: #d4a2b9;
+    background-color: rgba(212, 152, 180, 0.5);
     cursor: pointer;
 }
 

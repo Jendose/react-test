@@ -1,5 +1,4 @@
 .header {
-    height: 60px;
     background-color: #343a40;
 }
 
@@ -38,6 +37,7 @@
     font-size: large;
     color: aliceblue;
     transition: 300ms;
+    text-decoration: none;
 }
 
 .menu__element:hover {

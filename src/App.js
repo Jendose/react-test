@@ -65,7 +65,7 @@ const App = () => {
             artist: "Eisencore",
             label: "Monstercat",
             platform: "House of Tracks",
-            genres: ["Flumestep", "Pop"],
+            genres: ["Drum'n'bass", "Neurofunk", "Dubstep", "Drumstep", "Hardstyle"],
             bpm: 160,
             key_: "Am",
             daw: "Studio One",
@@ -84,7 +84,7 @@ const App = () => {
     const currencyRates = {'USD': 1, 'EUR': 0.86, 'RUB': 79.3};
 
     const addToFavouritesList = (track) => {
-        updateFavouritesList(favouritesList.concat([track]));
+        updateFavouritesList([track].concat(favouritesList));
     }
 
     const removeFromFavouritesList = (trackId) => {

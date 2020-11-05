@@ -1,6 +1,7 @@
 import React from 'react';
 import style from './NoFavouritesPage.module.css'
 import {NavLink} from "react-router-dom";
+import BlurringButton from "../BlurringButton/BlurringButton";
 
 class NoFavouritesPage extends React.Component {
 
@@ -17,7 +18,7 @@ class NoFavouritesPage extends React.Component {
                 <div className={style.text}>
                     Like some tracks from our database, and you'll find them here
                 </div>
-                <NavLink to='/tracks' className={style.button}>Explore</NavLink>
+                <BlurringButton to='/tracks' text='Explore'/>
             </div>
         )
     }

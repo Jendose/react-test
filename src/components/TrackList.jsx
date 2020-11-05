@@ -1,9 +1,6 @@
 import React from 'react';
 import TrackListElement from "./TrackListElement";
 class TrackList extends React.Component {
-    constructor(props) {
-        super(props);
-    }
 
     addToFavouritesList = (track) => {
         this.props.addToFavouritesList(track);

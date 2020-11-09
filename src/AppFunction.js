@@ -7,6 +7,7 @@ import PropTypes from 'prop-types'
 import {BrowserRouter, Route} from "react-router-dom";
 import NoFavouritesPage from "./components/NoFavouritesPage/NoFavouritesPage";
 import axios from "axios";
+import TrackListDbContainer from "./components/TrackListDbContainer";
 
 const App = () => {
 
@@ -94,22 +95,27 @@ const App = () => {
     }
 
 
-    useEffect(() => {
-        // axios.post('192.168.1.33:8080/tracks/',0).then(response => {trackList = response.data});
-        axios.get('http://localhost:8080/tracks')
-            .then(response => {
-                // debugger
-                updateTrackList(response.data);
-            });
-    }, []);
+    // useEffect(() => {
+    //     // axios.post('192.168.1.33:8080/tracks/',0).then(response => {trackList = response.data});
+    //     axios.get('http://localhost:8080/tracks')
+    //         .then(response => {
+    //             // debugger
+    //             updateTrackList(response.data);
+    //         });
+    // }, []);
 
     useEffect(() => {
-        updateTrackList(trackList.map(track => {
-            track.isLiked = isLiked(track.id);
-            return track;
-        }));
-
-    }, []);
+        const updatedTrackList = trackList;
+        updatedTrackList.forEach(track => {track.isLiked = false});
+        favouritesList.forEach(likedTrack => {
+            updatedTrackList.find(track => likedTrack.id === track.id).isLiked = true;
+        })
+        updateTrackList(updatedTrackList);
+        // updateTrackList(trackList.map(track => {
+        //     track.isLiked = isLiked(track.id);
+        //     return track;
+        // }));
+    }, [favouritesList]);
 
     const currencyRates = {'USD': 1, 'EUR': 0.86, 'RUB': 79.3};
 
@@ -129,10 +135,12 @@ const App = () => {
                     <div className="container">
                         <Route exact path='/tracks'
                                render={() =>
-                                   <TrackList trackList={trackList}
-                                              currencyRates={currencyRates}
-                                              addToFavouritesList={track => addToFavouritesList(track)}
-                                              removeFromFavouritesList={trackId => removeFromFavouritesList(trackId)}/>
+                                   <TrackListDbContainer trackList={trackList}
+                                                         favouritesList={favouritesList}
+                                                         currencyRates={currencyRates}
+                                                         updateTrackList={trackList => updateTrackList(trackList)}
+                                                         addToFavouritesList={track => addToFavouritesList(track)}
+                                                         removeFromFavouritesList={trackId => removeFromFavouritesList(trackId)}/>
                                }
                         />
                         <Route path='/favorites'

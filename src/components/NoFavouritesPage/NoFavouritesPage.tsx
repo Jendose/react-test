@@ -1,16 +1,9 @@
 import React from 'react';
 import style from './NoFavouritesPage.module.css'
-import {NavLink} from "react-router-dom";
 import BlurringButton from "../BlurringButton/BlurringButton";
 
-class NoFavouritesPage extends React.Component {
-
-    constructor(props) {
-        super(props);
-    }
-
-    render() {
-        return(
+const NoFavouritesPage = () => {
+    return(
             <div className={style.message}>
                 <div className={style.text}>
                     Hey! There is nothing here...
@@ -21,7 +14,6 @@ class NoFavouritesPage extends React.Component {
                 <BlurringButton to='/tracks' text='Explore'/>
             </div>
         )
-    }
 }
 
 export default NoFavouritesPage

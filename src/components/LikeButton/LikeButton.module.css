@@ -1,10 +1,8 @@
-.button__text {
-    /*font-family: Calibri;*/
-    /*font-size: xx-large;*/
+.text {
     font-weight: bold;
 }
 
-.button--like {
+.square {
     height: 60px;
     width: 60px;
     border-radius: 15px;
@@ -18,16 +16,16 @@
 
 }
 
-.button--like > * {
+.square > * {
     color: black;
 }
 
-.button--like:hover {
+.square:hover {
     background-color: rgba(212, 152, 180, 0.5);
     cursor: pointer;
 }
 
-.button--liked {
+.right-side{
     height: 100%;
     width: 60px;
     display: flex;
@@ -37,20 +35,32 @@
     justify-content: center;
     font-size: large;
     transition: 300ms;
-    background-color: #c45269;
+    background-color: #c4527a;
 }
 
-.button--liked > * {
+.round{
+    height: 60px;
+    width: 60px;
+    display: flex;
+    border-radius: 30px;
+    align-items: center;
+    justify-content: center;
+    font-size: large;
+    transition: 500ms;
+    background-color: #c4527a;
+}
+
+.right-side > *, .round > *{
     color: aliceblue;
 }
 
-.button--liked:hover {
-    background-color: #c45269;
+.right-side:hover, .round:hover{
+    background-color: #c4527a;
     color: aliceblue;
     cursor: pointer;
 }
 
-.button-wrapper{
+.buttonWrapper{
     display: flex;
     justify-content: flex-end;
     align-items: center;

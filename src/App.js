@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import Header from "./components/Header";
 import TrackList from "./components/TrackList";
-import Track from "./components/Track";
+import TrackPage from "./components/TrackPage";
 import PropTypes from 'prop-types'
 import {BrowserRouter, Route} from "react-router-dom";
 import NoFavouritesPage from "./components/NoFavouritesPage/NoFavouritesPage";
@@ -174,7 +174,7 @@ class App extends React.Component {
                             />
                             <Route exact path='/tracks/:id'
                                    render={() =>
-                                       <Track/>
+                                       <TrackPage/>
                                    }
                             />
                         </div>

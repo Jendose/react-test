@@ -1,18 +1,29 @@
 import React from 'react';
 import TrackList from "./TrackList";
 import axios from "axios";
+import {Track} from "../types/Track";
 
-class TrackListDbContainer extends React.Component{
+type Props = {
+    trackList: Array<Track>;
+    favouritesList: Array<Track>;
+    currencyTarget: string;
+    currencyRates: Map<string, number>;
+    updateTrackList: (trackList: Array<Track>) => void;
+    addToFavouritesList: (track: Track) => void;
+    removeFromFavouritesList: (trackId: number) => void;
+}
 
-    // state = {
-    //
-    // }
+type State = {
 
-    addToFavouritesList = (track) => {
+}
+
+class TrackListDbContainer extends React.Component<Props, State>{
+
+    addToFavouritesList = (track: Track) => {
         this.props.addToFavouritesList(track);
     }
 
-    removeFromFavouritesList = (trackId) => {
+    removeFromFavouritesList = (trackId: number) => {
         this.props.removeFromFavouritesList(trackId);
     }
 
@@ -37,6 +48,7 @@ class TrackListDbContainer extends React.Component{
     render() {
         return(
             <TrackList trackList={this.props.trackList}
+                       currencyTarget={this.props.currencyTarget}
                        currencyRates={this.props.currencyRates}
                        addToFavouritesList={track => this.addToFavouritesList(track)}
                        removeFromFavouritesList={trackId => this.removeFromFavouritesList(trackId)}/>

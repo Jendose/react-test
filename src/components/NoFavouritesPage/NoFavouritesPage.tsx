@@ -1,5 +1,5 @@
 import React from 'react';
-import style from './NoFavouritesPage.module.css'
+import style from './NoFavouritesPage.module.css';
 import BlurringButton from "../BlurringButton/BlurringButton";
 
 const NoFavouritesPage = () => {
@@ -13,7 +13,7 @@ const NoFavouritesPage = () => {
                 </div>
                 <BlurringButton to='/tracks' text='Explore'/>
             </div>
-        )
+        );
 }
 
-export default NoFavouritesPage
+export default NoFavouritesPage;

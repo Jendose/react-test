@@ -1,12 +1,7 @@
 import React from 'react';
-import LikeButton from "./LikeButtonRound";
 import TrackListElement from "./TrackListElement";
 
-class Track extends React.Component {
-
-    constructor(props) {
-        super(props);
-    }
+class TrackPage extends React.Component {
 
     render() {
         return(
@@ -17,4 +12,4 @@ class Track extends React.Component {
     }
 }
 
-export default Track
+export default TrackPage

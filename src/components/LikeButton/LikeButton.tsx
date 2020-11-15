@@ -16,14 +16,14 @@ type State = {
 // TODO: change logic of attaching styles to button so than round shape will have no padding
 class LikeButton extends React.Component<Props, State> {
 
-    state = this.props.isLiked?
-            {text: "Unlike", isLiked: true, className: this.props.shape}:
-            {text: "Like", isLiked: false, className: "square"};
+    state = this.props.isLiked ?
+        {text: "Unlike", isLiked: true, className: this.props.shape} :
+        {text: "Like", isLiked: false, className: "square"};
 
     changeState() {
         this.setState(
-            this.state.isLiked?
-                {text: "Like", isLiked: false, className: "square"}:
+            this.state.isLiked ?
+                {text: "Like", isLiked: false, className: "square"} :
                 {text: "Unlike", isLiked: true, className: this.props.shape},
             () => {
                 this.props.updateLike(this.state.isLiked)

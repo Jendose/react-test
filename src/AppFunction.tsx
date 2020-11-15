@@ -5,32 +5,26 @@ import TrackList from "./components/TrackList";
 import TrackPage from "./components/TrackPage";
 import {BrowserRouter, Route} from "react-router-dom";
 import NoFavouritesPage from "./components/NoFavouritesPage/NoFavouritesPage";
-import axios from "axios";
 import TrackListDbContainer from "./components/TrackListDbContainer";
 import {Track} from "./types/Track";
 
 const App = () => {
 
-    const [trackList, updateTrackList] = useState<Array<Track>>(new Array<Track>());
-    const [favouritesList, updateFavouritesList] = useState<Array<Track>>(new Array<Track>());
-
-    // const isLiked = (trackId: number) => {
-    //     return favouritesList.findIndex(track => track.id === trackId) !== -1;
-    // }
+    const [trackList, updateTrackList] = useState<Track[]>([]);
+    const [favouritesList, updateFavouritesList] = useState<Track[]>([]);
 
     useEffect(() => {
-        const updatedTrackList: Array<Track> = trackList;
+        const updatedTrackList: Track[] = trackList;
         updatedTrackList.forEach((track: Track) => {
             track.isLiked = false
         });
         favouritesList.forEach((likedTrack: Track) => {
-            updatedTrackList.find((track: Track) => likedTrack.id === track.id).isLiked = true; // TODO: debug
+            const currentTrack = updatedTrackList.find((track: Track) => likedTrack.id === track.id);
+            if (currentTrack) {
+                currentTrack.isLiked = true;
+            }
         });
         updateTrackList(updatedTrackList);
-        // updateTrackList(trackList.map(track => {
-        //     track.isLiked = isLiked(track.id);
-        //     return track;
-        // }));
     }, [favouritesList]);
 
     const currencyRates = new Map([

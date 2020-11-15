@@ -4,7 +4,7 @@ export type Track = {
     artist: string | null;
     label: string | null;
     platform: string | null;
-    genres: Array<string>;
+    genres: string[];
     bpm: number | null;
     key_: string | null;
     daw: string | null;

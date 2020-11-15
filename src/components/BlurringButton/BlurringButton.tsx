@@ -8,8 +8,8 @@ type Props = {
 }
 
 const BlurringButton = ({to, text}: Props) => {
-    return(
-            <NavLink to={to} className={style.button}>{text}</NavLink>
+    return (
+        <NavLink to={to} className={style.button}>{text}</NavLink>
     );
 }
 

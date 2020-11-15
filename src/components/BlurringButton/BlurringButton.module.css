@@ -1,4 +1,4 @@
-.button{
+.button {
     margin-top: 70px;
     margin-bottom: 100px;
     padding: 30px;
@@ -11,17 +11,17 @@
     font-weight: bold;
 }
 
-.button:hover{
+.button:hover {
     cursor: pointer;
     margin-top: 40px;
     padding: 50px;
     border-radius: 30px;
     background-color: rgba(180, 195, 208, 0.15);
     box-shadow: 0 0 30px 30px rgba(180, 195, 208, 0.15);
-    transition-timing-function: cubic-bezier(.16,-0.03,.18,1.03);
+    transition-timing-function: cubic-bezier(.16, -0.03, .18, 1.03);
     transition-duration: 1s;
 }
 
-.button:not(:hover){
+.button:not(:hover) {
     transition-duration: 500ms;
 }

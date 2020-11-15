@@ -25,7 +25,7 @@
     cursor: pointer;
 }
 
-.right-side{
+.right-side {
     height: 100%;
     width: 60px;
     display: flex;
@@ -38,7 +38,7 @@
     background-color: #c4527a;
 }
 
-.round{
+.round {
     height: 60px;
     width: 60px;
     display: flex;
@@ -50,17 +50,17 @@
     background-color: #c4527a;
 }
 
-.right-side > *, .round > *{
+.right-side > *, .round > * {
     color: aliceblue;
 }
 
-.right-side:hover, .round:hover{
+.right-side:hover, .round:hover {
     background-color: #c4527a;
     color: aliceblue;
     cursor: pointer;
 }
 
-.buttonWrapper{
+.buttonWrapper {
     display: flex;
     justify-content: flex-end;
     align-items: center;

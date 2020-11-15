@@ -13,11 +13,9 @@ type Props = {
     removeFromFavouritesList: (trackId: number) => void;
 }
 
-type State = {
+type State = {}
 
-}
-
-class TrackListDbContainer extends React.Component<Props, State>{
+class TrackListDbContainer extends React.Component<Props, State> {
 
     addToFavouritesList = (track: Track) => {
         this.props.addToFavouritesList(track);
@@ -27,17 +25,6 @@ class TrackListDbContainer extends React.Component<Props, State>{
         this.props.removeFromFavouritesList(trackId);
     }
 
-    // componentDidMount() {
-    //     axios.get('http://localhost:8080/tracks')
-    //         .then(response => {
-    //             const updatedTrackList = response.data;
-    //             this.props.favouritesList.forEach(likedTrack => {
-    //                 updatedTrackList.find(track => likedTrack.id === track.id).isLiked = true;
-    //             })
-    //             this.props.updateTrackList(updatedTrackList);
-    //         });
-    // }
-
     componentDidMount() {
         axios.get('http://localhost:8080/tracks')
             .then(response => {
@@ -46,7 +33,7 @@ class TrackListDbContainer extends React.Component<Props, State>{
     }
 
     render() {
-        return(
+        return (
             <TrackList trackList={this.props.trackList}
                        currencyTarget={this.props.currencyTarget}
                        currencyRates={this.props.currencyRates}

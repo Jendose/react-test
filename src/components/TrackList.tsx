@@ -3,7 +3,7 @@ import TrackListElement from "./TrackListElement";
 import {Track} from "../types/Track";
 
 type Props = {
-    trackList: Array<Track>;
+    trackList: Track[];
     currencyTarget: string;
     currencyRates: Map<string, number>;
     addToFavouritesList: (track: Track) => void;
@@ -21,19 +21,19 @@ const TrackList = (props: Props) => {
     }
 
     return (
-            <div className="tracklist">
-                {
-                    props.trackList.map(track => (
-                        <TrackListElement
-                            track={track}
-                            currencyTarget={props.currencyTarget}
-                            currencyRates={props.currencyRates}
-                            addToFavouritesList={track => addToFavouritesList(track)}
-                            removeFromFavouritesList={trackId => removeFromFavouritesList(trackId)}
-                        />
-                    ))
-                }
-            </div>
+        <div className="tracklist">
+            {
+                props.trackList.map(track => (
+                    <TrackListElement
+                        track={track}
+                        currencyTarget={props.currencyTarget}
+                        currencyRates={props.currencyRates}
+                        addToFavouritesList={track => addToFavouritesList(track)}
+                        removeFromFavouritesList={trackId => removeFromFavouritesList(trackId)}
+                    />
+                ))
+            }
+        </div>
     )
 }
 

@@ -4,7 +4,7 @@ import TrackListElement from "./TrackListElement";
 class TrackPage extends React.Component {
 
     render() {
-        return(
+        return (
             <div className="tracklist">
                 {/*{this.props.match.params.id}*/}
             </div>

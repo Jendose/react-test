@@ -22,31 +22,11 @@ type State = {
 class TrackListElement extends React.Component<Props, State> {
 
     state = {
-            id: this.props.track.id,
-            isLiked: false,
-            status: this.props.track.status,
-            statusText: (this.props.track.status === 'ONSALE' ? 'On sale' : this.props.track.status === 'SOLD' ? 'Sold' : 'Undefined')
+        id: this.props.track.id,
+        isLiked: this.props.track.isLiked,
+        status: this.props.track.status,
+        statusText: (this.props.track.status === 'ONSALE' ? 'On sale' : this.props.track.status === 'SOLD' ? 'Sold' : 'Undefined')
     }
-
-    // track : Track = {
-    //     id: this.props.id,
-    //     name: this.props.name,
-    //     artist: this.props.artist,
-    //     label: this.props.label,
-    //     platform: this.props.platform,
-    //     genres: this.props.genres,
-    //     bpm: this.props.bpm,
-    //     key_: this.props.key_,
-    //     daw: this.props.daw,
-    //     duration: this.props.duration,
-    //     price: this.props.price,
-    //     currency: this.props.currency,
-    //     dateCreated: this.props.dateCreated,
-    //     dateSold: this.props.dateSold,
-    //     status: this.props.status,
-    //     coverImage: this.props.coverImage,
-    //     isLiked: true
-    // }
 
     // convertCurrency = (value, currency1, currency2, rates) => {
     //     let z = 0;
@@ -70,13 +50,12 @@ class TrackListElement extends React.Component<Props, State> {
         if (seconds < 10) {
             seconds = "0" + seconds;
         }
-        if (hours !== 0){
+        if (hours !== 0) {
             if (minutes < 10) {
                 minutes = "0" + minutes;
             }
             return hours + ':' + minutes + ':' + seconds;
-        }
-        else return minutes + ':' + seconds;
+        } else return minutes + ':' + seconds;
     }
 
     coverImageStyle = {
@@ -108,7 +87,7 @@ class TrackListElement extends React.Component<Props, State> {
                     <div className="card__info">
                         <div className="info__title">
                             {this.props.track.name != null ? <NavLink to={'/tracks/' + this.props.track.id}
-                                                                className="title-element">{this.props.track.name}</NavLink> :
+                                                                      className="title-element">{this.props.track.name}</NavLink> :
                                 <div className="text-block"> —</div>}
                             {this.props.track.artist != null && <div className="title-wrapper">
                                 <div className="text-block">by</div>
@@ -151,7 +130,7 @@ class TrackListElement extends React.Component<Props, State> {
                                         className="text-block">{this.props.track.genres && this.props.track.genres.length > 1 ? "Genres:" : "Genre:"}</div>
                                     <div className="properties__cell--genre">
                                         {this.props.track.genres && this.props.track.genres.map((genre) => {
-                                            return <div /*key={genre.id}*/ className="properties-element">{genre}</div>
+                                            return <div className="properties-element">{genre}</div>
                                         })}
                                     </div>
                                 </div>
@@ -172,7 +151,8 @@ class TrackListElement extends React.Component<Props, State> {
                             </div>
                         </div>
                     </div>
-                    <LikeButton isLiked={this.state.isLiked} shape="right-side" updateLike={booleanValue => this.updateLike(booleanValue)}/>
+                    <LikeButton isLiked={this.state.isLiked} shape="right-side"
+                                updateLike={booleanValue => this.updateLike(booleanValue)}/>
                 </div>
             </div>
         )
